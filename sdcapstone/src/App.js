@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
-import Nav from "./Nav.js";
-import Products from "./Products.js";
-import Testing from "./Testing.js";
-import Vaccine from "./Vaccine.js";
-import CovidTracking from "./CovidTracking.js";
+// import Nav from "./Nav.js";
+import Products from "./products";
+import Testing from "./testing";
+import Vaccine from "./vaccine";
+import CovidTracking from "./covidTracking";
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
@@ -12,10 +12,10 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ProductsJson: [],
-      TestingJson: [],
-      VaccineJson: [],
-      CovidTrackingJson: []
+      productsJson: [],
+      testingJson: [],
+      vaccineJson: [],
+      covidTrackingJson: []
     };
   }
 
@@ -26,7 +26,7 @@ class App extends Component {
       },
     })
       .then((response) => response.json())
-      .then((output) => this.setState({ ProductsJson: output }));
+      .then((output) => this.setState({ productsJson: output }));
 
     fetch("https://sdcapstone.herokuapp.com/Testing", {
       headers: {
@@ -34,7 +34,7 @@ class App extends Component {
       },
     })
       .then((response) => response.json())
-      .then((output) => this.setState({ TestingJson: output }));
+      .then((output) => this.setState({ testingJson: output }));
 
     fetch("https://sdcapstone.herokuapp.com/Vaccine", {
       headers: {
@@ -42,7 +42,7 @@ class App extends Component {
       },
     })
       .then((response) => response.json())
-      .then((output) => this.setState({ VaccineJson: output }));
+      .then((output) => this.setState({ vaccineJson: output }));
 
     fetch("https://sdcapstone.herokuapp.com/CovidTrackingJson", {
         headers: {
@@ -50,7 +50,7 @@ class App extends Component {
         },
       })
         .then((response) => response.json())
-        .then((output) => this.setState({ CovidTrackingJson: output }));
+        .then((output) => this.setState({ covidTrackingJson: output }));
   }
 
   render() {
@@ -58,19 +58,19 @@ class App extends Component {
       <div className="App">
         <div>
           <BrowserRouter>
-            <Nav />
+            {/* <Nav /> */}
             <Switch>
               <Route exact path="/Products">
-                <Products data={this.state.ProductsJson} />
+                <Products data={this.state.productsJson} />
               </Route>
               <Route exact path="/Testing">
-                <Testing data={this.state.TestingJson} />
+                <Testing data={this.state.testingJson} />
               </Route>
               <Route exact path="/Vaccine">
-                <Vaccine data={this.state.VaccineJson} />
+                <Vaccine data={this.state.vaccineJson} />
               </Route>
               <Route exact path="/CovidTracking">
-                <CovidTracking data={this.state.CovidTrackingJson} />
+                <CovidTracking data={this.state.covidTrackingJson} />
               </Route>       
             </Switch>
           </BrowserRouter>

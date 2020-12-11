@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Products.css";
+import "./products.css";
 
 class Products extends Component {
     constructor(props) {
@@ -14,7 +14,7 @@ class Products extends Component {
                 {this.props.products.length !==0
                 ? this.props.products.map((Products) => (
                     <h1 className="second">
-                        <span className="third">{Products.product}</span>
+                        <p className="product">{Products.product}</p>
                         <p className="product">{Products.average_efficiency_precentage}</p>
                         <p className="product">{Products.average_pricing_USD}</p>
                         <p className="product">{Products.available}</p>

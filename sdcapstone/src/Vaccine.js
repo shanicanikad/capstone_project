@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Vaccine.css";
+import "./vaccine.css";
 
 class Vaccine extends Component {
     constructor(props) {
@@ -15,14 +15,14 @@ class Vaccine extends Component {
                 {this.props.vaccine.length !==0
                 ? this.props.vaccine.map((Vaccine) => (
                     <h1 className="second">
-                        <span className="third">{Vaccine.product}</span>
-                        <p className="product">{Vaccine.average_efficiency_precentage}</p>
-                        <p className="product">{Vaccine.average_pricing_USD}</p>
-                        <p className="product">{Vaccine.place}</p>
-                        {/* <img src= {Vaccine.image_url} className= "productImage" alt="Responsive Pic"/>
-                        <p className="product">{Vaccine.price}</p>
-                        <p className="product">{Vaccine.link}</p>
-                        <p className="product">{Vaccine.infoLink}</p> */}
+                        <p className="third">{Vaccine.vaccine}</p>
+                        <p className="vaccine">{Vaccine.average_efficiency_precentage}</p>
+                        <p className="vaccine">{Vaccine.average_pricing_USD}</p>
+                        <p className="vaccine">{Vaccine.place}</p>
+                        {/* <img src= {Vaccine.image_url} className= "vaccineImage" alt="Responsive Pic"/>
+                        <p className="vaccine">{Vaccine.price}</p>
+                        <p className="vaccine">{Vaccine.link}</p>
+                        <p className="vaccine">{Vaccine.infoLink}</p> */}
                     </h1>
                 ))
             : null}
