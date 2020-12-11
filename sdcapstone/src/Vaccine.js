@@ -8,21 +8,21 @@ class Vaccine extends Component {
 
 
     render() {
-        console.log(this.props.vaccine);
+        console.log(this.props.data);
         return (
             <div className="first">
                 <p></p>
-                {this.props.vaccine.length !==0
-                ? this.props.vaccine.map((Vaccine) => (
+                {this.props.data.length !==0
+                ? this.props.data.map((vaccine) => (
                     <h1 className="second">
-                        <p className="third">{Vaccine.vaccine}</p>
-                        <p className="vaccine">{Vaccine.average_efficiency_precentage}</p>
-                        <p className="vaccine">{Vaccine.average_pricing_USD}</p>
-                        <p className="vaccine">{Vaccine.place}</p>
-                        {/* <img src= {Vaccine.image_url} className= "vaccineImage" alt="Responsive Pic"/>
-                        <p className="vaccine">{Vaccine.price}</p>
-                        <p className="vaccine">{Vaccine.link}</p>
-                        <p className="vaccine">{Vaccine.infoLink}</p> */}
+                        <p className="vaccine">{vaccine.product}</p>
+                        <p className="vaccine">{vaccine.average_efficiency_percentage}</p>
+                        <p className="vaccine">{vaccine.average_pricing_USD}</p>
+                        {/* <p className="vaccine">{vaccine.place}</p>
+                        <img src= {vaccine.image_url} className= "vaccineImage" alt="Responsive Pic"/>
+                        <p className="vaccine">{vaccine.price}</p>
+                        <p className="vaccine">{vaccine.link}</p>
+                        <p className="vaccine">{vaccine.infoLink}</p> */}
                     </h1>
                 ))
             : null}

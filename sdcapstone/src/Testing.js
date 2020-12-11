@@ -7,21 +7,21 @@ class Testing extends Component {
     }
 
     render() {
-        console.log(this.props.testing);
+        console.log(this.props.data);
         return (
             <div className="first">
                 <p></p>
-                {this.props.testing.length !==0
-                ? this.props.testing.map((Testing) => (
+                {this.props.data.length !==0
+                ? this.props.data.map((testing) => (
                     <h1 className="second">
-                        <p className="testing">{Testing.testing}</p>
-                        <p className="testing">{Testing.average_efficiency_precentage}</p>
-                        <p className="testing">{Testing.average_pricing_USD}</p>
-                        <p className="testing">{Testing.place}</p>
-                        {/* <img src= {Testing.image_url} className= "testingImage" alt="Responsive Pic"/>
-                        <p className="testing">{Testing.price}</p>
-                        <p className="testing">{Testing.link}</p>
-                        <p className="testing">{Testing.infoLink}</p> */}
+                        <p className="testing">{testing.product}</p>
+                        <p className="testing">{testing.average_efficiency_percentage}</p>
+                        <p className="testing">{testing.average_pricing_USD}</p>
+                        {/* <p className="testing">{testing.place}</p>
+                        <img src= {testing.image_url} className= "testingImage" alt="Responsive Pic"/>
+                        <p className="testing">{testing.price}</p>
+                        <p className="testing">{testing.link}</p>
+                        <p className="testing">{testing.infoLink}</p> */}
                     </h1>
                 ))
             : null}

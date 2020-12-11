@@ -7,18 +7,18 @@ class Products extends Component {
     }
 
     render() {
-        console.log(this.props.products);
+        console.log(this.props.data);
         return (
             <div className="first">
                 <p></p>
-                {this.props.products.length !==0
-                ? this.props.products.map((Products) => (
+                {this.props.data.length !==0
+                ? this.props.data.map((products) => (
                     <h1 className="second">
-                        <p className="product">{Products.product}</p>
-                        <p className="product">{Products.average_efficiency_precentage}</p>
-                        <p className="product">{Products.average_pricing_USD}</p>
-                        <p className="product">{Products.available}</p>
-                        {/* <img src= {Products.image_url} className= "productImage" alt="Responsive Pic"/>
+                        <p className="product">{products.product}</p>
+                        <p className="product">{products.average_efficiency_percentage}</p>
+                        <p className="product">{products.average_pricing_USD}</p>
+                        {/* <p className="product">{products.available}</p>
+                        <img src= {Products.image_url} className= "productImage" alt="Responsive Pic"/>
                         <p className="product">{Products.price}</p>
                         <p className="product">{Products.link}</p>
                         <p className="product">{Products.infoLink}</p> */}

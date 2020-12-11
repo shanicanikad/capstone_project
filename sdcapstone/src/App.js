@@ -44,7 +44,7 @@ class App extends Component {
       .then((response) => response.json())
       .then((output) => this.setState({ vaccineJson: output }));
 
-    fetch("https://sdcapstone.herokuapp.com/CovidTrackingJson", {
+    fetch("https://sdcapstone.herokuapp.com/CovidTracking", {
         headers: {
           Accept: "application/json",
         },
