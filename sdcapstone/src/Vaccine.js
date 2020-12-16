@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./vaccine.css";
+import Nav from "./Nav.js";
+
 
 class Vaccine extends Component {
     constructor(props) {
@@ -10,22 +12,20 @@ class Vaccine extends Component {
     render() {
         console.log(this.props.data);
         return (
-            <div className="first">
-                <p></p>
-                {this.props.data.length !==0
-                ? this.props.data.map((vaccine) => (
-                    <h1 className="second">
-                        <p className="vaccine">{vaccine.product}</p>
-                        <p className="vaccine">{vaccine.average_efficiency_percentage}</p>
-                        <p className="vaccine">{vaccine.average_pricing_USD}</p>
-                        {/* <p className="vaccine">{vaccine.place}</p>
-                        <img src= {vaccine.image_url} className= "vaccineImage" alt="Responsive Pic"/>
-                        <p className="vaccine">{vaccine.price}</p>
-                        <p className="vaccine">{vaccine.link}</p>
-                        <p className="vaccine">{vaccine.infoLink}</p> */}
-                    </h1>
-                ))
-            : null}
+            <div className="three">
+                <Nav />
+                <h1>How to Stop the Spread of COVID-19</h1>
+                <h3>The Up and Coming Pfizer Vaccine for COVID-19</h3>
+                {this.props.data.length !== 0
+                    ? this.props.data.map((item) => (
+                        <div class="border3">
+                            <p className= "item1">Product: {item.product}</p>
+                            <p className= "item2">Efficiency: {item.average_efficiency_percentage}%</p>
+                            <p className= "item3">Average Cost: ${item.average_pricing_USD}.00</p>
+                            {item.available.map(product => (<div className= "item4"> <p>Where Available: {product.place}</p> <img src={product.image_url} /> <p><a href={product.infoLink}>Click Here for More Information</a></p> </div>))}
+                        </div>
+                    ))
+                    : null}
             </div>
         );
     }

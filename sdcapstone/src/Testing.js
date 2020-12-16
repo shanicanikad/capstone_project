@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./testing.css";
+import Nav from "./Nav.js";
+
 
 class Testing extends Component {
     constructor(props) {
@@ -9,22 +11,22 @@ class Testing extends Component {
     render() {
         console.log(this.props.data);
         return (
-            <div className="first">
-                <p></p>
-                {this.props.data.length !==0
-                ? this.props.data.map((testing) => (
-                    <h1 className="second">
-                        <p className="testing">{testing.product}</p>
-                        <p className="testing">{testing.average_efficiency_percentage}</p>
-                        <p className="testing">{testing.average_pricing_USD}</p>
-                        {/* <p className="testing">{testing.place}</p>
-                        <img src= {testing.image_url} className= "testingImage" alt="Responsive Pic"/>
-                        <p className="testing">{testing.price}</p>
-                        <p className="testing">{testing.link}</p>
-                        <p className="testing">{testing.infoLink}</p> */}
-                    </h1>
-                ))
-            : null}
+            <div className="two">
+                <Nav />
+                <h1>How to Stop the Spread of COVID-19</h1>
+                <h3>Testing for COVID-19</h3>
+                <div className="container-grid2">
+                    {this.props.data.length !== 0
+                        ? this.props.data.map((item) => (
+                            <div class="border2">
+                                <p>Product: {item.product}</p>
+                                <p>Efficiency: {item.average_efficiency_percentage}%</p>
+                                <p>Average Cost: ${item.average_pricing_USD}.00</p>
+                                {item.available.map(product => (<div> <p>Where Available: {product.place}</p> <img src={product.image_url} /> <p><a href={product.infoLink}>Click Here for More Information</a></p> </div>))}
+                            </div>
+                        ))
+                        : null}
+                </div>
             </div>
         );
     }

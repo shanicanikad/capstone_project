@@ -1,0 +1,26 @@
+body{
+    background-image: url("https://img4.goodfon.com/wallpaper/nbig/a/8b/vector-blue-squares-abstract-background-geometric.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0
+}
+a {
+    padding: 50px;
+    text-decoration: none;
+    color: blue;
+    margin-top: 100px;
+}
+
+.map {
+    padding-top: 100px; 
+    font-weight: 900;
+    font-size: 50px
+}
+
+.theMap {
+    height: 100%;
+    width: 100%
+}
+footer {
+    font-size: 10px;
+}

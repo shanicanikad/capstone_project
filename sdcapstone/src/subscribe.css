@@ -1,0 +1,22 @@
+.contain1 {
+    text-align: left;
+}
+
+.contain2 {
+    text-align: left;
+    padding-bottom: 20px
+}
+
+.forMore {
+    text-align: left;
+    color: blue;
+    padding-top: 30px;
+    padding-left: 20px
+}
+
+button {
+    text-align: left;
+    color: blue;
+    background: white;
+
+}

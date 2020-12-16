@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-// import Nav from "./Nav.js";
+import HomePage from "./homePage";
 import Products from "./products";
 import Testing from "./testing";
 import Vaccine from "./vaccine";
@@ -45,12 +45,12 @@ class App extends Component {
       .then((output) => this.setState({ vaccineJson: output }));
 
     fetch("https://sdcapstone.herokuapp.com/CovidTracking", {
-        headers: {
-          Accept: "application/json",
-        },
-      })
-        .then((response) => response.json())
-        .then((output) => this.setState({ covidTrackingJson: output }));
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((output) => this.setState({ covidTrackingJson: output }));
   }
 
   render() {
@@ -58,7 +58,13 @@ class App extends Component {
       <div className="App">
         <div>
           <BrowserRouter>
-            {/* <Nav /> */}
+            <Route
+              exact
+              path="/"
+              render={() => {
+                return <HomePage />;
+              }}
+            />
             <Switch>
               <Route exact path="/Products">
                 <Products data={this.state.productsJson} />
@@ -71,7 +77,7 @@ class App extends Component {
               </Route>
               <Route exact path="/CovidTracking">
                 <CovidTracking data={this.state.covidTrackingJson} />
-              </Route>       
+              </Route>
             </Switch>
           </BrowserRouter>
         </div>
