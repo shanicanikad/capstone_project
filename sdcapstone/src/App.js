@@ -5,6 +5,9 @@ import Products from "./products";
 import Testing from "./testing";
 import Vaccine from "./vaccine";
 import CovidTracking from "./covidTracking";
+import Add from "./add";
+import Update from "./update"
+
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
@@ -77,6 +80,12 @@ class App extends Component {
               </Route>
               <Route exact path="/CovidTracking">
                 <CovidTracking data={this.state.covidTrackingJson} />
+              </Route>
+              <Route exact path="/add">
+                <Add />
+              </Route>
+              <Route exact path="/update">
+                <Update />
               </Route>
             </Switch>
           </BrowserRouter>

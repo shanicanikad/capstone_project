@@ -12,7 +12,7 @@ class Subscribe extends Component {
             <div className="forMore"> For Daily Updates, Please Subscribe
                 <div class="contain1">
                     <input type="text" placeholder="Email address" name="mail" required />
-                    <button onClick={() => alert("Thank you for Subscribing")}> Subscribe </button>
+                    <button onClick={() => alert("Thank you for Subscribing!")}> Subscribe </button>
                 </div>
             </div>
         )
