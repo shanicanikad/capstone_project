@@ -4,7 +4,7 @@ END COVID NOW!
 
 Welcome to your Covid Informational Guide, your guide to all things Covid-19.
 
-Here, (localhost:9000/), the user is redirected to the landing page. 
+Here, (https://sdcapstoneproject.vercel.app/), the user is redirected to the landing page. 
 
 From the landing page, the user can click on "Click Here". This will bring the user to the main page.
 
