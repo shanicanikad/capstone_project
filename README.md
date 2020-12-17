@@ -4,32 +4,44 @@ END COVID NOW!
 
 Welcome to your Covid Informational Guide, your guide to all things Covid-19.
 
-Here, (https://sdcapstoneproject.vercel.app/), the user is redirected to the landing page. 
+Here, (https://sdcapstoneproject.vercel.app/), the user is directed to the main page. 
 
-From the landing page, the user can click on "Click Here". This will bring the user to the main page.
 
-On the main page, the user can click on either of the four buttons: "Products", "Testing", "Vaccine", and "Covid Traking". Clicking on one of these buttons redirects the user to another page. 
+On the main page, the user can click on either of the four buttons: "Products", "COVID-19 Testing", "Pfizer Vaccine", and "COVID-19 Tracking 2020". Clicking on any one of these buttons redirects the user to another page. On the main page, the user can see a picture of the COVID Tracking Map. This map has information on current COVID tracking across the world. Under the picture, there is a button labeled, "Click Here for Hourly Updates". When the user clicks this button, the user is redirected to the actual COVID Tracking page by John Hopkins Coronavirus Resource Center page to get live updates. At the button of this page, there is a subscription form labeled, "For Daily Updates, Please Subscribe". Here the user can enter their email address and click the 'Subscribe' button. When the button is clicked, the user gets an alert saying, "Thank you for Subscribing!"
 
-When directed to the "Products" tab, the user will be redirected to the 'Products' page where he or she can view different products that aid in the protection against Covid. The user can view the different product's average pricing based on three different stores that each product can be found in and each product's average efficiency. 
 
-When directed to the "Testing" tab, the user will be redirected to the 'Testing' page where he or she can view different forms of testing that can detect whether a person has Covid-19 or not. The user can also find information about where to get each testing done.
 
-When directed to the "Vaccine" tab, the user will be redirected to the 'Vaccine' page where he or she can view information about the upcoming vaccine by Pfizer. 
 
-And finally, when directed to the "Covid Tracking" tab, the user will be redirected to the 'Covid Tracking' page where he or she can view the projected Covid-19 tracking data in the United States from the beginning of this year.
 
-On each separate page, there are three tabs that the user can click on: "Update", "Delete", and "Add a Product". 
+When directed to the "Products" tab, the user will be redirected to the 'Products' page where he or she can view different products that aid in the protection against COVID-19. The user can view the different product names, efficiency, average cost based on three different stores that each product can be found in and the cost from each store. Each product has a button labeled, "Click Here for Important Health Information". This button redirects the user to different important health information about that product. The button labeled "Buy Here" brings the user to the actual site that that product is being sold on. 
 
-"Update" will allow the user to update information such as updating the average efficiency of a product in the products section. 
+At the top of the page, there is an "Add a product" button which allows the user to add a new COVID protection product. When clicking this button, the user is redirected to a blank form page where the user can type in the information to add product name, efficiency, average cost, an information link, where the product is available, an image, a price, and a link on where to buy the product. After filling out the forms, the user clicks on the 'Submit' button and the user is redirected back to the products page where the user can see their added product.
 
-"Delete" will allow the user to delete information that is no longer relevent like data on the 'Covid Tracking' page that occurred pre-Covid.
+On the product page, when the user clicks the 'Delete' button under a product, the user deletes that product.
 
-Finally, "Add a Product" allows the user to create new information because as we know, our information about Covid is forever changing!
+When the user clicks the 'Update' button on the same page, the user is redirected to a blank form page where the can type in the information that he or she wants to update. Once done filling out the forms, the user clicks on the 'Submit' button which redirects the user back to the product page where the user can see their updated information on that specific product.
 
-At the bottom of the main page, there is a "Subscibe" button and next to the button is a form that the user can enter their email address. When the user clicks the "Subscribe" button, an alert will pop up on the screen saying, "Thanks for Subscribing!"
 
-** Front-end made with React.js and Javascript **
 
+
+
+When directed to the "COVID-19 Testing" tab, the user will be redirected to the 'COVID-19 Testing' page where he or she can view different forms of testing that can detect whether a person has COVID-19 or not. The user can also find information about where to get each testing done. The button labeled "Click Here for More Information" redirects the user to information on each specific test like each test's cost, efficiency, and more like how each test is done and how they work.
+
+
+
+
+
+When directed to the "Pfizer Vaccine" tab, the user will be redirected to the 'Pfizer Vaccine' page where he or she can view information about the COVID-19 Coronavirus Vaccine by Pfizer. The button labeled "Click Here for More Information" redirects the user to information on the vaccine like cost, efficiency, and more.
+
+
+
+
+
+And finally, when directed to the "COVID-19 Tracking 2020" tab, the user will be redirected to the 'Covid Tracking' page where he or she can view the projected COVID-19 tracking data in the United States from the beginning of this year. When the user clicks, "MORE INFOMATION", the user can find more information about the provided map on COVID-19 Cases in the United States from the New York Times. At the bottom of the page, the user can see dates with numbers regarding positive cases, negative cases, current hospitalizations, current ICU patients, recovered cases, and deaths. On the initial page, these dates start from 12/10/2020 and end on 12/06/2020. When the user clicks, "Next Set", the next set of dates appear on the screen. Every time this button is clicked, a new set appears.
+
+** Front-end made with React.js **
+[npx create-react-app]
+[npm start]
 
 
 
@@ -56,8 +68,21 @@ Information that becomes irrelevent or outdated is frequently deleted.
 
 
 ** Back-end made with Node.js, Mongo, Mongoose, CORS, and Express **
+[npm install mongoose]
+[npm install express]
+[npm install cors]
+[npm init]
 
-** Front end information based on Products API, Testing API, and Vaccine API by Shanica Denis and Covid Tracking API from the COVID Tracking Project Data Api **
+
+
+
+
+
+*** Front end information based on Products API, Testing API, and Vaccine API by Shanica Denis and Covid Tracking API from the COVID Tracking Project Data Api ***
+
+
+
+
 
 
 
