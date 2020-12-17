@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./products.css";
 import Nav from "./Nav.js";
-
+import {withRouter} from "react-router-dom"
 
 
 class Add extends Component {
@@ -32,7 +32,12 @@ class Add extends Component {
             body: JSON.stringify({ product: this.state.product, average_efficiency_percentage: this.state.average_efficiency_percentage, average_pricing_USD: this.state.average_pricing_USD, infoLink: this.state.infoLink, available: [{ place: this.state.place, image_url: this.state.image_url, price: this.state.price, link: this.state.link }] }),
         })
             .then((res) => res.json())
-            .then((out) => this.setState({message: "CONGRADULATIONS! You have made a new product!"}));
+            .then((out) => {
+                console.log(this.props)
+                this.props.history.push("/products")
+            // this.setState({message: "CONGRADULATIONS! You have made a new product!"})
+        }
+            );
     };
 
     handleProduct = (event) => {
@@ -101,4 +106,4 @@ class Add extends Component {
 }
 
 
-export default Add;
+export default withRouter (Add);

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./products.css";
 import Nav from "./Nav.js";
+import {withRouter} from "react-router-dom"
 
 
 class Update extends Component {
@@ -34,8 +35,14 @@ componentDidMount ()         {console.log(this.props.match.params.id)}
             body: JSON.stringify({ product: this.state.product, average_efficiency_percentage: this.state.average_efficiency_percentage, average_pricing_USD: this.state.average_pricing_USD, infoLink: this.state.infoLink, available: [{ place: this.state.place, image_url: this.state.image_url, price: this.state.price, link: this.state.link }] }),
         })
             .then((res) => res.json())
-            .then((out) => this.setState({message: "CONGRADULATIONS! You have just updated a product!"}));
-    };
+            .then((out) => {
+                console.log(this.props)
+                this.props.history.push("/products")
+            // this.setState({message: "CONGRADULATIONS! You have just updated a product!"}));
+    }
+            );
+};
+
 
     handleProduct = (event) => {
         console.log(event.target.value)
@@ -104,4 +111,4 @@ componentDidMount ()         {console.log(this.props.match.params.id)}
 }
 
 
-export default Update;
+export default withRouter (Update);
