@@ -84,8 +84,7 @@ class App extends Component {
               <Route exact path="/add">
                 <Add />
               </Route>
-              <Route exact path="/update">
-                <Update />
+              <Route path="/update/:id" component= {Update}> 
               </Route>
             </Switch>
           </BrowserRouter>

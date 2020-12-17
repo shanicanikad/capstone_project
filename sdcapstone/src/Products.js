@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./products.css";
 import Nav from "./Nav.js";
+import {Link} from "react-router-dom";
 
 
 class Products extends Component {
@@ -10,18 +11,18 @@ class Products extends Component {
             product: []
         }
     }
-    handleAdd = (id) => {
-        fetch("https://sdcapstone.herokuapp.com/products/" + id, {
-            method: "PUT",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ product: this.state.product, "status": false }),
-        })
-            .then((res) => res.json())
-            .then((out) => this.fetchProductData());
-    };
+    // handleAdd = (id) => {
+    //     fetch("https://sdcapstone.herokuapp.com/products/" + id, {
+    //         method: "PUT",
+    //         headers: {
+    //             Accept: "application/json",
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify({ product: this.state.product, "status": false }),
+    //     })
+    //         .then((res) => res.json())
+    //         .then((out) => this.fetchProductData());
+    // };
 
 
     handleDelete = (id) => {
@@ -35,18 +36,18 @@ class Products extends Component {
 
     }
 
-    handleUpdate = (id) => {
-        fetch("https://sdcapstone.herokuapp.com/products/" + id, {
-            method: "POST",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ product: this.state.product, "status": false }),
-        })
-            .then((res) => res.json())
-            .then((out) => this.fetchProductData());
-    };
+    // handleUpdate = (id) => {
+    //     fetch("https://sdcapstone.herokuapp.com/products/" + id, {
+    //         method: "POST",
+    //         headers: {
+    //             Accept: "application/json",
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify({ product: this.state.product, "status": false }),
+    //     })
+    //         .then((res) => res.json())
+    //         .then((out) => this.fetchProductData());
+    // };
 
     render() {
         console.log(this.props.data);
@@ -71,9 +72,9 @@ class Products extends Component {
                                 <a href="#" className="delete" onClick={() => this.handleDelete(item._id)}>
                                     Delete
                             </a>
-                                <a href="/update" className="update">
+                                <Link to={`/update/${item._id}`} className="update">
                                     Update
-                            </a>
+                            </Link>
                             </div>
                         ))
                         : null}

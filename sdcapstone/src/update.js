@@ -5,32 +5,96 @@ import Nav from "./Nav.js";
 
 class Update extends Component {
     constructor(props) {
-        super();
+        super(props);
         this.state = {
-            product: []
+            product: "",
+            average_efficiency_percentage: "",
+            average_pricing_USD: "",
+            infoLink: "",
+            place: "",
+            image_url: "",
+            price: "",
+            link: "",
+            message:""
         }
     }
 
-    handleSubmitUpdate = (id) => {
-        fetch("https://sdcapstone.herokuapp.com/products/" + id, {
-            method: "POST",
+componentDidMount ()         {console.log(this.props.match.params.id)}
+
+
+
+    handleSubmitUpdate = (event) => {
+        event.preventDefault ()
+        fetch("https://sdcapstone.herokuapp.com/products/id/" + this.props.match.params.id, {
+            method: "PUT",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ product: this.state.product, average_efficiency_percentage: this.state.average_efficiency_percentage, average_pricing_USD: this.state.average_pricing_USD, infoLink: this.state.infoLink, available: [{ place: this.state.place, image_url: this.state.image_url, price: this.state.price, link: this.state.link }] }),
         })
             .then((res) => res.json())
-            .then((out) => this.fetchProductData());
+            .then((out) => this.setState({message: "CONGRADULATIONS! You have just updated a product!"}));
     };
 
+    handleProduct = (event) => {
+        console.log(event.target.value)
+        this.setState({ product: event.target.value });
+    }
+
+    handleEfficiency = (event) => {
+        console.log(event.target.value)
+        this.setState({ average_efficiency_percentage: event.target.value });
+    }
+
+    handleAverageCost = (event) => {
+        console.log(event.target.value)
+        this.setState({ average_pricing_USD: event.target.value });
+    }
+
+    handleInfoLink = (event) => {
+        console.log(event.target.value)
+        this.setState({ infoLink: event.target.value });
+    }
+
+    handleWhereAvailable = (event) => {
+        console.log(event.target.value)
+        this.setState({ place: event.target.value });
+    }
+
+    handleImageURL = (event) => {
+        console.log(event.target.value)
+        this.setState({ image_url: event.target.value });
+    }
+
+    handlePrice = (event) => {
+        console.log(event.target.value)
+        this.setState({ price: event.target.value });
+    }
+
+    handleLink = (event) => {
+        console.log(event.target.value)
+        this.setState({ link: event.target.value });
+    }
     render() {
         return (
             <div>                 
                 <Nav />
                 <form>
-                   <label>
-              Product: <p><input type="text" onChange={this.handleSubmitUpdate} name="name" /></p>
-              Efficiency: <p><input type="text" onChange={this.handleSubmitUpdate} name="name" /></p>
-              Average Cost: <p><input type="text" onChange={this.handleSubmitUpdate} name="name" /></p>
-              Where Available: <p><input type="text" onChange={this.handleSubmitUpdate} name="name" /></p>
-              Image URL: <p><input type="text" onChange={this.handleSubmitUpdate} name="name" /></p> 
+                <label>
+              Product: <p><input type="text" onChange={this.handleProduct} name="name" /></p>
+              Efficiency: <p><input type="text" onChange={this.handleEfficiency} name="name" /></p>
+              Average Cost: <p><input type="text" onChange={this.handleAverageCost} name="name" /></p>
+              Info Link: <p><input type="text" onChange={this.handleInfoLink} name="name" /></p>
+              Where Available: <p><input type="text" onChange={this.handleWhereAvailable} name="name" /></p>
+              Image URL: <p><input type="text" onChange={this.handleImageURL} name="name" /></p> 
+              Price: <p><input type="text" onChange={this.handlePrice} name="name" /></p>
+              Link: <p><input type="text" onChange={this.handleLink} name="name" /></p>
+              {this.state.message}
+
             </label>
+            <button onClick={(event) => this.handleSubmitUpdate(event)}>Submit</button>
+
                 </form>
 
             </div>
