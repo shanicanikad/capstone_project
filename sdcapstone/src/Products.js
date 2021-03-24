@@ -55,7 +55,7 @@ class Products extends Component {
             <div className="one">
                 <Nav />
                 <h1>How to Stop the Spread of COVID-19</h1>
-                <h3>Helpful Projects to Help Stop the Spread of COVID-19</h3>
+                <h3>Helpful Products to Help Stop the Spread of COVID-19</h3>
                 <a href="/add" className="new">
                     Add a Product
                             </a>
